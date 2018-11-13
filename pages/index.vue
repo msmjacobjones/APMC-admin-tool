@@ -9,7 +9,7 @@
         <input
           :name="uploadFieldName" 
           :disabled="isSaving"
-          accept="image/*"
+          accept=".json"
           type="file"
           class="input-file"
           multiple
@@ -24,7 +24,7 @@
     </form>
     <!--SUCCESS-->
     <div v-if="isSuccess">
-      <h2>Uploaded {{ uploadedFiles.length }} file(s) successfully.</h2>
+      <h2>Uploaded {{ uploadedFiles[0].originalName }} file successfully.</h2>
       <p>
         <a 
           href="javascript:void(0)" 
@@ -33,11 +33,8 @@
       <ul class="list-unstyled">
         <li 
           v-for="item in uploadedFiles" 
-          :key="item.url">
-          <img 
-            :src="item.url"
-            :alt="item.originalName"
-            class="img-responsive img-thumbnail">
+          :key="item.originalname">
+          <p v-if="isSaving">Uploaded {{ item.originalname }} files...</p>
         </li>
       </ul>
     </div>

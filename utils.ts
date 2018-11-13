@@ -3,8 +3,8 @@ import { Collection } from 'lokijs';
 
 const imageFilter = function (req, file, cb) {
     // accept image only
-    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-        return cb(new Error('Only image files are allowed!'), false);
+    if (!file.originalname.match(/\.(json)$/)) {
+        return cb(new Error('Only json files are allowed!'), false);
     }
     cb(null, true);
 };
