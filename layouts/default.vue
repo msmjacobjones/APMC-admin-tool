@@ -115,7 +115,7 @@ export default {
           to: '/home-page'
         },
         { icon: 'bubble_chart', title: 'Results Page', to: '/results-page' },
-        { icon: 'warning', title: 'Warnings!!', to: '/warnings-depreciation' }
+        { icon: 'warning', title: 'All Metrics', to: '/all-metrics' }
       ],
       miniVariant: false,
       right: true,

@@ -4,7 +4,7 @@
       v-if="isInitial || isSaving"
       enctype="multipart/form-data" 
       novalidate>
-      <h1>Upload images</h1>
+      <h1>Upload json file</h1>
       <div class="dropbox">
         <input
           :name="uploadFieldName" 
