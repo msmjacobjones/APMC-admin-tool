@@ -58,7 +58,7 @@ import aboutthepolicyholder from '../assets/Desktop/aboutthepolicyholder.report.
 import highimpactquestions from '../assets/Desktop/highimpactquestions.report.json'
 import homePage from '../assets/Desktop/home-page.report.json'
 import results from '../assets/Desktop/results.report.json'
-import helperFunctions from '../plugins/helperFunctions.js'
+import helperFunctions from '../helpers/helperFunctions.js'
 
 export default {
   data() {
