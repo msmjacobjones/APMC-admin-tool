@@ -6,6 +6,12 @@ import homePage from '../assets/Desktop/home-page.report.json'
 import results from '../assets/Desktop/results.report.json'
 
 export default {
+  checkPerformance: function() {
+    var performance = this.averagePerformanceTable();
+      if(performance[performance.length - 1] < 10) {
+        return 'Red'
+      }
+  },
   averageMetricsTable: function() {
     return [
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100),
@@ -59,11 +65,13 @@ export default {
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100),
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 10),
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 5),
-      Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 - 9),
+      Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 - 60),
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 11),
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 3),
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 9),
-      Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 50),
+      Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 - 33),
+      Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 30),
+      Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 60)
     ]
   }
 }

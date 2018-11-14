@@ -42,7 +42,8 @@
           :beginzero="false"
           :datalabel="performanceMetricTitle"
           :labels="performanceLabels"
-          :data="averagePerformanceTable"/>
+          :data="averagePerformanceTable"
+          :bordercolor="backgroundColor"/>
         <blockquote class="blockquote">
           Average metrics from all pages.
         </blockquote>
@@ -64,6 +65,7 @@ export default {
     return {
       /*eslint-disable */
       beginZero: true,
+      backgroundColor: helperFunctions.checkPerformance(),
       title: 'Average metrics from all pages',
       performanceMetricTitle: 'Average Site Performance',
       labels: ['Performance', 'Progressive Web App', 'Accessibility', 'SEO'],
