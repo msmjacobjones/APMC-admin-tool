@@ -53,11 +53,6 @@
 </template>
 
 <script>
-import aboutthehome from '../assets/Desktop/aboutthehome.report.json'
-import aboutthepolicyholder from '../assets/Desktop/aboutthepolicyholder.report.json'
-import highimpactquestions from '../assets/Desktop/highimpactquestions.report.json'
-import homePage from '../assets/Desktop/home-page.report.json'
-import results from '../assets/Desktop/results.report.json'
 import helperFunctions from '../helpers/helperFunctions.js'
 
 export default {
