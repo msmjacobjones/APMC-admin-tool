@@ -32,6 +32,7 @@
 
 <script>
 import data from '../assets/Desktop/home-page.report.json'
+import helperFunctions from '../helpers/helperFunctions.js'
 
 export default {
   data() {
@@ -45,12 +46,7 @@ export default {
         data.categories.accessibility.title,
         data.categories.seo.title
       ],
-      data: [
-        Math.round(data.categories.performance.score * 100),
-        Math.round(data.categories.pwa.score * 100),
-        Math.round(data.categories.accessibility.score * 100),
-        Math.round(data.categories.seo.score * 100)
-      ],
+      data: helperFunctions.getScore(data),
       headers: [
         {
           text: 'Lighthouse Report',

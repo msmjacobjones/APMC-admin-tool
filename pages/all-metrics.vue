@@ -46,6 +46,7 @@
           :bordercolor="backgroundColor"/>
         <blockquote class="blockquote">
           Average metrics from all pages.
+          {{ myTest }}
         </blockquote>
       </v-flex>
     </v-layout>
@@ -54,16 +55,18 @@
 
 <script>
 import helperFunctions from '../helpers/helperFunctions.js'
+import results from '../assets/Desktop/results.report.json'
 
 export default {
   data() {
     return {
       /*eslint-disable */
       beginZero: true,
+      myTest: results.categories.performance.score,
       backgroundColor: helperFunctions.checkPerformance(),
       title: 'Average metrics from all pages',
       performanceMetricTitle: 'Average Site Performance',
-      labels: ['Performance', 'Progressive Web App', 'Accessibility', 'SEO'],
+      labels: ['Performance', 'Progressive Web App', 'Accessibility', 'Best practices', 'SEO'],
       performanceLabels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       averageMetricsTable: helperFunctions.averageMetricsTable(),
       averagePerformanceTable: helperFunctions.averagePerformanceTable(),

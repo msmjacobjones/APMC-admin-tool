@@ -73,5 +73,13 @@ export default {
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 30),
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100 + 60)
     ]
+  },
+  getScore: function(data) {
+    return [
+      Math.round(data.categories.performance.score * 100),
+      Math.round(data.categories.pwa.score * 100),
+      Math.round(data.categories.accessibility.score * 100),
+      Math.round(data.categories.seo.score * 100)
+    ]
   }
 }
