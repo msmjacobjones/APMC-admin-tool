@@ -79,7 +79,32 @@ export default {
       Math.round(data.categories.performance.score * 100),
       Math.round(data.categories.pwa.score * 100),
       Math.round(data.categories.accessibility.score * 100),
+      Math.round(data.categories['best-practices'].score * 100),
       Math.round(data.categories.seo.score * 100)
+    ]
+  },
+  getTableMetrics: function(data) {
+    return [
+      {
+        value: false,
+        name: 'Performance',
+        score: Math.round(data.categories.performance.score * 100)
+      },
+      {
+        value: false,
+        name: 'Progressive Web App',
+        score: Math.round(data.categories.pwa.score * 100)
+      },
+      {
+        value: false,
+        name: 'Accessibility',
+        score: Math.round(data.categories.accessibility.score * 100)
+      },
+      {
+        value: false,
+        name: 'SEO',
+        score: Math.round(data.categories.seo.score * 100)
+      }
     ]
   }
 }
