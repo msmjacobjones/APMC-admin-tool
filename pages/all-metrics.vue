@@ -46,7 +46,6 @@
           :bordercolor="backgroundColor"/>
         <blockquote class="blockquote">
           Average metrics from all pages.
-          {{ myTest }}
         </blockquote>
       </v-flex>
     </v-layout>
@@ -62,7 +61,6 @@ export default {
     return {
       /*eslint-disable */
       beginZero: true,
-      myTest: results.categories.performance.score,
       backgroundColor: helperFunctions.checkPerformance(),
       title: 'Average metrics from all pages',
       performanceMetricTitle: 'Average Site Performance',

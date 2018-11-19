@@ -74,21 +74,23 @@
           <v-list-tile-action>
             <v-icon light>compare_arrows</v-icon>
           </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
+          <v-list-tile-title>Switch drawer (click me)
+          </v-list-tile-title>
         </v-list-tile>
       </v-list>
+      <circular-rotate :resultsdata="metricData"/>
     </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; 2017</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
+import circularRotate from '@/components/circularRotate'
+import helperFunctions from '../helpers/helperFunctions.js'
+
 export default {
+  components: {
+    'circular-rotate': circularRotate
+  },
   data() {
     return {
       clipped: false,
@@ -123,6 +125,11 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Site Speed Metircs'
+    }
+  },
+  computed: {
+    metricData() {
+      return helperFunctions.getRoutes(this.$route.path)
     }
   }
 }

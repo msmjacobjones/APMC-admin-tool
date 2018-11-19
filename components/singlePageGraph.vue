@@ -2,12 +2,11 @@
   <v-flex xs10>
     <chartjs-bar 
       :beginzero="beginZero"
-      :datalabel="title"
       :labels="labels"
-      :data="data"/>
+      :data="data"
+      :datalabel="title"/>
     <blockquote class="blockquote">
       &#8220;First, solve the problem. Then, write the code.&#8221;
-      {{ myTest }}
     </blockquote>
   </v-flex>
 </template>
@@ -31,10 +30,6 @@ export default {
     return {
       /*eslint-disable */
       beginZero: true,
-      title: this.title,
-      myTest: '',
-      interval: {},
-      value: 0,
       labels: [
         data.categories.performance.title,
         data.categories.pwa.title,
@@ -51,14 +46,6 @@ export default {
         }
       ],
     }
-  },
-    methods: {
-    init(){
-      console.log(this.$route.query.page)
-    }
-  },
-  mounted() {
-    this.init()
   }
 }
 </script>

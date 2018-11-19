@@ -4,6 +4,7 @@ import aboutthepolicyholder from '../assets/Desktop/aboutthepolicyholder.report.
 import highimpactquestions from '../assets/Desktop/highimpactquestions.report.json'
 import homePage from '../assets/Desktop/home-page.report.json'
 import results from '../assets/Desktop/results.report.json'
+import * as axios from 'axios'
 
 export default {
   checkPerformance: function() {
@@ -106,5 +107,18 @@ export default {
         score: Math.round(data.categories.seo.score * 100)
       }
     ]
+  },
+  getRoutes: function(data) {
+    if (data === '/about-the-home') {
+      return aboutthehome
+    } else if (data === '/about-the-policy-holder') {
+      return aboutthepolicyholder
+    } else if (data === '/high-impact-questions') {
+      return highimpactquestions
+    } else if (data === '/home-page') {
+      return homePage
+    } else {
+      return results
+    }
   }
 }

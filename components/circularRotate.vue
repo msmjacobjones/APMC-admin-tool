@@ -84,7 +84,7 @@ export default {
   },
   mounted () {
     for(var i = 0; i < this.value.length; i++) {
-        if (this.value[i] < 33) {
+        if (this.value[i] < 50) {
           this.colour.push('red')
       } else if (this.value[i] > 70) {
         this.colour.push('green')
