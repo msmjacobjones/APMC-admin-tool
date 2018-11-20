@@ -166,6 +166,27 @@ export default {
       data.audits['first-cpu-idle'].displayValue,
       data.audits['interactive'].displayValue,
     ]
-  }
+  },
+  audits: function(data) {
+       // Opportunities
+       var results = []
+       var data = data.categories.performance.auditRefs
+       for(var i=0; i < data.length; i++) {
+         if(data[i].group === 'load-opportunities') {
+            results.push(data[i])
+         }
+       }
+       return results
+  },
+  search: function(data) {
+      var arr = this.audits(data)
+      var results = []
+      for(var i = 0; i < arr.length; i++) {
+        if (data.audits[arr[i].id].displayValue.indexOf('ms') > -1) {
+          results.push(data.audits[arr[i].id])
+            }
+      }
+      return results
+    }
 }
 

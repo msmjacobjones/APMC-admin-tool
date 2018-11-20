@@ -28,6 +28,7 @@
       </v-flex>
     </v-layout>
     <time-bar :resultsdata="datafrompage"/>
+    <opportunities-panel :resultsdata="datafrompage"/>
   </v-container>
 </template>
 
@@ -36,13 +37,15 @@ import circularRotate from '@/components/circularRotate'
 import singlePageTable from '@/components/singlePageTable'
 import singlePageGraph from '@/components/singlePageGraph'
 import timeBar from '@/components/timeBar'
+import opportunitiesPanel from '@/components/opportunitiesPanel'
 
 export default {
   components: {
     'circular-rotate': circularRotate,
     'single-page-table': singlePageTable,
     'single-page-graph': singlePageGraph,
-    'time-bar': timeBar
+    'time-bar': timeBar,
+    'opportunities-panel': opportunitiesPanel
   },
   props: {
     datafrompage: {

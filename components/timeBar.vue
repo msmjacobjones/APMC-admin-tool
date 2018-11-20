@@ -4,7 +4,7 @@
       v-for="i in 5" 
       :key="i" >
       <blockquote class="blockquote">
-        {{ title[i -1 ] }} in {{ loadtimes[i -1] }}
+        {{ title[i -1] }} in {{ loadtimes[i -1] }}
       </blockquote>
       <v-progress-linear
         :color="colour[i - 1]"
