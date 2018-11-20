@@ -129,5 +129,32 @@ export default {
       data.categories['best-practices'].title,
       data.categories.seo.title
     ]
+  },
+  getPaintData: function(data) {
+    return [
+      100 - (data.audits['first-contentful-paint'].score * 100),
+      100 - (data.audits['first-meaningful-paint'].score * 100),
+      100 - (data.audits['speed-index'].score * 100),
+      100 - (data.audits['first-cpu-idle'].score * 100),
+      100 - (data.audits['interactive'].score * 100)
+    ]
+  },
+  getPaintTitle: function(data) {
+    return [
+      data.audits['first-contentful-paint'].title,
+      data.audits['first-meaningful-paint'].title,
+      data.audits['speed-index'].title,
+      data.audits['first-cpu-idle'].title,
+      data.audits['interactive'].title,
+    ]
+  },
+  getPaintValue: function(data) {
+    return [
+      data.audits['first-contentful-paint'].displayValue,
+      data.audits['first-meaningful-paint'].displayValue,
+      data.audits['speed-index'].displayValue,
+      data.audits['first-cpu-idle'].displayValue,
+      data.audits['interactive'].displayValue,
+    ]
   }
 }
