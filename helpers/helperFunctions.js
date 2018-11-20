@@ -120,5 +120,14 @@ export default {
     } else {
       return results
     }
+  },
+  getTitle: function(data) {
+    return [
+      data.categories.performance.title,
+      data.categories.pwa.title,
+      data.categories.accessibility.title,
+      data.categories['best-practices'].title,
+      data.categories.seo.title
+    ]
   }
 }

@@ -1,67 +1,24 @@
 <template>
   <v-layout>
-    <div class="text-xs-center">
-      <blockquote class="blockquote">
-        {{ resultsdata.categories.performance.title }}
-      </blockquote>
-      <v-progress-circular
-        :rotate="-90"
-        :size="100"
-        :width="15"
-        :value="value[0]"
-        :color="colour[0]"
-      >
-        {{ value[0] }}
-      </v-progress-circular>
-      <blockquote class="blockquote">
-        {{ resultsdata.categories.pwa.title }}
-      </blockquote>
-      <v-progress-circular
-        :rotate="-90"
-        :size="100"
-        :width="15"
-        :value="value[1]"
-        :color="colour[1]"
-      >
-        {{ value[1] }}
-      </v-progress-circular>
-      <blockquote class="blockquote">
-        {{ resultsdata.categories.accessibility.title }}
-      </blockquote>
-      <v-progress-circular
-        :rotate="-90"
-        :size="100"
-        :width="15"
-        :value="value[2]"
-        :color="colour[2]"
-      >
-        {{ value[2] }}
-      </v-progress-circular>
-      <blockquote class="blockquote">
-        {{ resultsdata.categories['best-practices'].title }}
-      </blockquote>
-      <v-progress-circular
-        :rotate="-90"
-        :size="100"
-        :width="15"
-        :value="value[3]"
-        :color="colour[3]"
-      >
-        {{ value[3] }}
-      </v-progress-circular>
-      <blockquote class="blockquote">
-        {{ resultsdata.categories.seo.title }}
-      </blockquote>
-      <v-progress-circular
-        :rotate="-90"
-        :size="100"
-        :width="15"
-        :value="value[4]"
-        :color="colour[4]"
-      >
-        {{ value[4] }}
-      </v-progress-circular>
-    </div>
+    <v-flex 
+      v-for="i in 5" 
+      :key="`1${i}`" 
+      xs2>
+      <div class="text-xs-center">
+        <blockquote class="blockquote">
+          {{ title[i - 1] }}
+        </blockquote>
+        <v-progress-circular
+          :rotate="-90"
+          :size="100"
+          :width="15"
+          :value="value[i - 1]"
+          :color="colour[i - 1]"
+        >
+          {{ value[i - 1] }}
+        </v-progress-circular>
+      </div>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -79,6 +36,7 @@ export default {
     /*eslint-disable */
     return {
       value: helperFunctions.getScore(this.resultsdata),
+      title: helperFunctions.getTitle(this.resultsdata),
       colour: []
     }
   },
