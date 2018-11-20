@@ -54,6 +54,7 @@
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
+        @click="thisShouldTriggerRecompute"
       >
         <v-icon>menu</v-icon>
       </v-btn>
@@ -75,6 +76,7 @@
             <v-icon light>compare_arrows</v-icon>
           </v-list-tile-action>
           <v-list-tile-title>Switch drawer (click me)
+            {{ metricData.categories.performance.score }} <!-- TODO: find a way to update data passed to circular-rotate depending on page -->
           </v-list-tile-title>
         </v-list-tile>
       </v-list>
@@ -93,6 +95,8 @@ export default {
   },
   data() {
     return {
+      metricData: helperFunctions.getRoutes(this.$route.path),
+      show: false,
       clipped: false,
       drawer: true,
       fixed: false,
@@ -127,9 +131,9 @@ export default {
       title: 'Site Speed Metircs'
     }
   },
-  computed: {
-    metricData() {
-      return helperFunctions.getRoutes(this.$route.path)
+  methods: {
+    thisShouldTriggerRecompute() {
+      this.metricData = helperFunctions.getRoutes(this.$route.path)
     }
   }
 }
