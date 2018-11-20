@@ -18,6 +18,7 @@ export default {
       Math.round(((aboutthehome.categories.performance.score + aboutthepolicyholder.categories.performance.score + highimpactquestions.categories.performance.score + homePage.categories.performance.score + results.categories.performance.score ) / 5) * 100),
       Math.round(((aboutthehome.categories.pwa.score + aboutthepolicyholder.categories.pwa.score + highimpactquestions.categories.pwa.score + homePage.categories.pwa.score + results.categories.pwa.score ) / 5) * 100),
       Math.round(((aboutthehome.categories.accessibility.score + aboutthepolicyholder.categories.accessibility.score + highimpactquestions.categories.accessibility.score + homePage.categories.accessibility.score + results.categories.accessibility.score ) / 5) * 100),
+      Math.round(((aboutthehome.categories['best-practices'].score + aboutthepolicyholder.categories['best-practices'].score + highimpactquestions.categories['best-practices'].score + homePage.categories['best-practices'].score + results.categories['best-practices'].score ) / 5) * 100),
       Math.round(((aboutthehome.categories.seo.score + aboutthepolicyholder.categories.seo.score + highimpactquestions.categories.seo.score + homePage.categories.seo.score + results.categories.seo.score ) / 5) * 100),
     ]
   },
@@ -49,6 +50,15 @@ export default {
         highimpactquestions: Math.round(highimpactquestions.categories.accessibility.score * 100),
         homePage: Math.round(homePage.categories.accessibility.score * 100),
         results: Math.round(results.categories.accessibility.score * 100)
+      },      
+      {
+        value: false,
+        name: 'Best Practices',
+        aboutthehome: Math.round(aboutthehome.categories['best-practices'].score * 100),
+        aboutthepolicyholder: Math.round(aboutthepolicyholder.categories['best-practices'].score * 100),
+        highimpactquestions: Math.round(highimpactquestions.categories['best-practices'].score * 100),
+        homePage: Math.round(homePage.categories['best-practices'].score * 100),
+        results: Math.round(results.categories['best-practices'].score * 100)
       },
       {
         value: false,
@@ -158,3 +168,4 @@ export default {
     ]
   }
 }
+
