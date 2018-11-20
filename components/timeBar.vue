@@ -1,44 +1,14 @@
 <template>
   <div>
-    <div>
+    <div 
+      v-for="i in 5" 
+      :key="i" >
       <blockquote class="blockquote">
-        {{ title[0] }} in {{ loadtimes[0] }}
+        {{ title[i -1 ] }} in {{ loadtimes[i -1] }}
       </blockquote>
       <v-progress-linear
-        :color="colour[0]"
-        :value="value[0]"
-        height="10"
-      />
-      <blockquote class="blockquote">
-        {{ title[1] }} in {{ loadtimes[1] }}
-      </blockquote>
-      <v-progress-linear
-        :color="colour[1]"
-        :value="value[1]"
-        height="10"
-      />
-      <blockquote class="blockquote">
-        {{ title[2] }} in {{ loadtimes[2] }}
-      </blockquote>
-      <v-progress-linear
-        :color="colour[2]"
-        :value="value[2]"
-        height="10"
-      />
-      <blockquote class="blockquote">
-        {{ title[3] }} in {{ loadtimes[3] }}
-      </blockquote>
-      <v-progress-linear
-        :color="colour[3]"
-        :value="value[3]"
-        height="10"
-      />
-      <blockquote class="blockquote">
-        {{ title[4] }} in {{ loadtimes[4] }}
-      </blockquote>
-      <v-progress-linear
-        :color="colour[4]"
-        :value="value[4]"
+        :color="colour[i - 1]"
+        :value="value[i - 1]"
         height="10"
       />
     </div>
