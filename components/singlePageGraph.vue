@@ -5,9 +5,6 @@
       :labels="labels"
       :data="data"
       :datalabel="title"/>
-    <blockquote class="blockquote">
-      &#8220;First, solve the problem. Then, write the code.&#8221;
-    </blockquote>
   </v-flex>
 </template>
 
@@ -34,6 +31,7 @@ export default {
         data.categories.performance.title,
         data.categories.pwa.title,
         data.categories.accessibility.title,
+        data.categories['best-practices'].title,
         data.categories.seo.title
       ],
       data: helperFunctions.getScore(this.resultsdata),
