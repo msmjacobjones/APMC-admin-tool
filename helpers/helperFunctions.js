@@ -182,7 +182,7 @@ export default {
       var arr = this.audits(data)
       var results = []
       for(var i = 0; i < arr.length; i++) {
-        if (data.audits[arr[i].id].displayValue.indexOf('ms') > -1) {
+        if (data.audits[arr[i].id].details.overallSavingsMs > 0) {
           results.push(data.audits[arr[i].id])
             }
       }
