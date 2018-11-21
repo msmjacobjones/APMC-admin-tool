@@ -29,6 +29,7 @@
     </v-layout>
     <time-bar :resultsdata="datafrompage"/>
     <opportunities-panel :resultsdata="datafrompage"/>
+    <diagnostics-panel :resultsdata="datafrompage"/>
   </v-container>
 </template>
 
@@ -38,6 +39,7 @@ import singlePageTable from '@/components/singlePageTable'
 import singlePageGraph from '@/components/singlePageGraph'
 import timeBar from '@/components/timeBar'
 import opportunitiesPanel from '@/components/opportunitiesPanel'
+import diagnosticsPanel from '@/components/diagnosticsPanel'
 
 export default {
   components: {
@@ -45,7 +47,8 @@ export default {
     'single-page-table': singlePageTable,
     'single-page-graph': singlePageGraph,
     'time-bar': timeBar,
-    'opportunities-panel': opportunitiesPanel
+    'opportunities-panel': opportunitiesPanel,
+    'diagnostics-panel': diagnosticsPanel
   },
   props: {
     datafrompage: {

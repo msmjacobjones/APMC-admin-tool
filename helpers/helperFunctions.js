@@ -167,19 +167,19 @@ export default {
       data.audits['interactive'].displayValue,
     ]
   },
-  audits: function(data) {
+  audits: function(data, value) {
        // Opportunities
        var results = []
        var data = data.categories.performance.auditRefs
        for(var i=0; i < data.length; i++) {
-         if(data[i].group === 'load-opportunities') {
+         if(data[i].group === value) {
             results.push(data[i])
          }
        }
        return results
   },
-  search: function(data) {
-      var arr = this.audits(data)
+  search: function(data, value) {
+      var arr = this.audits(data, value)
       var results = []
       for(var i = 0; i < arr.length; i++) {
         if (data.audits[arr[i].id].details.overallSavingsMs > 0) {
@@ -187,6 +187,27 @@ export default {
             }
       }
       return results
+    },
+  diagnosticsAudits: function(data, value) {
+      // Opportunities
+      var results = []
+      var data = data.categories.performance.auditRefs
+      for(var i=0; i < data.length; i++) {
+        if(data[i].group === value) {
+          results.push(data[i])
+        }
+      }
+      return results
+  },
+  diagnosticsSearch: function(data) {
+      // Diagnostics
+        var arr = data.categories.performance.auditRefs
+            .filter(audit => audit.group === 'diagnostics')
+          var results = []
+          for(var i = 0; i < arr.length; i++) {
+              results.push(data.audits[arr[i].id])
+          }
+          return results
     }
 }
 
