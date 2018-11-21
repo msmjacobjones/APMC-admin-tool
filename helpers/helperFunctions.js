@@ -212,7 +212,14 @@ export default {
     formatforcsv: function() {
       return [
         {
-          value: false,
+          name: 'Pages',
+          aboutthehome: 'About The Home',
+          aboutthepolicyholder: 'About The Policy Holder Page',
+          highimpactquestions: 'High Impact Questions Page',
+          homePage: 'Home Page',
+          results: 'Results Page'
+        },
+        {
           name: 'Performance',
           aboutthehome: Math.round(aboutthehome.categories.performance.score * 100),
           aboutthepolicyholder: Math.round(aboutthepolicyholder.categories.performance.score * 100),
@@ -221,7 +228,6 @@ export default {
           results: Math.round(results.categories.performance.score * 100)
         },
         {
-          value: false,
           name: 'Progressive Web App',
           aboutthehome: Math.round(aboutthehome.categories.pwa.score * 100),
           aboutthepolicyholder: Math.round(aboutthepolicyholder.categories.pwa.score * 100),
@@ -230,7 +236,6 @@ export default {
           results: Math.round(results.categories.pwa.score * 100)
         },
         {
-          value: false,
           name: 'Accessibility',
           aboutthehome: Math.round(aboutthehome.categories.accessibility.score * 100),
           aboutthepolicyholder: Math.round(aboutthepolicyholder.categories.accessibility.score * 100),
@@ -239,7 +244,6 @@ export default {
           results: Math.round(results.categories.accessibility.score * 100)
         },      
         {
-          value: false,
           name: 'Best Practices',
           aboutthehome: Math.round(aboutthehome.categories['best-practices'].score * 100),
           aboutthepolicyholder: Math.round(aboutthepolicyholder.categories['best-practices'].score * 100),
@@ -248,16 +252,12 @@ export default {
           results: Math.round(results.categories['best-practices'].score * 100)
         },
         {
-          value: false,
           name: 'SEO',
           aboutthehome: Math.round(aboutthehome.categories.seo.score * 100),
           aboutthepolicyholder: Math.round(aboutthepolicyholder.categories.seo.score * 100),
           highimpactquestions: Math.round(highimpactquestions.categories.seo.score * 100),
           homePage: Math.round(homePage.categories.seo.score * 100),
           results: Math.round(results.categories.seo.score * 100)
-        },
-        {
-          note: 'Note: from from column C to G represents each page. i.e. C1-C5 is about the home. Then it is [about the policy holder]. [high impact questions]. [home page]. and finally [results page] from G1 to G5'
         }
       ]
     }
