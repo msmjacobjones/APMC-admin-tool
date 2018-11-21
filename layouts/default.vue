@@ -80,7 +80,7 @@
           </v-list-tile-title>
         </v-list-tile>
       </v-list>
-      <circular-rotate :resultsdata="metricData"/>
+      <!-- <circular-rotate :resultsdata="metricData"/> -->
     </v-navigation-drawer>
   </v-app>
 </template>
@@ -122,8 +122,7 @@ export default {
           title: 'Home Page',
           to: '/home-page'
         },
-        { icon: 'bubble_chart', title: 'Results Page', to: '/results-page' },
-        { icon: 'warning', title: 'All Metrics', to: '/all-metrics' }
+        { icon: 'bubble_chart', title: 'Results Page', to: '/results-page' }
       ],
       miniVariant: false,
       right: true,
